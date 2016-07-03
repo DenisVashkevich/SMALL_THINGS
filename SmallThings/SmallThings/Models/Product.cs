@@ -1,23 +1,24 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 
 namespace SmallThings.Models
 {
 	public class Product
 	{
-		public ObservableCollection<Document> Documents { get; set; }
-
-		public ObservableCollection<Feature> Features { get; set; }
 		public string Id { get; set; }
-
-		public ObservableCollection<Image> Images { get; set; }
 
 		public string Name { get; set; }
 
+		public List<Document> Documents { get; set; }
+
+		public List<Feature> Features { get; set; }
+
+		public List<Image> Images { get; set; }
+
 		public Product()
 		{
-			Documents = new ObservableCollection<Document>();
-			Images = new ObservableCollection<Image>();
-			Features = new ObservableCollection<Feature>();
+			Documents = new List<Document>();
+			Images = new List<Image>();
+			Features = new List<Feature>();
 		}
 	}
 }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IProductApiService.cs" />
+    <Compile Include="Interfaces\IProductProcessor.cs" />
     <Compile Include="Models\Document.cs" />
     <Compile Include="Models\Feature.cs" />
     <Compile Include="Models\Image.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProductApiService.cs" />
+    <Compile Include="Services\ProductProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
