@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SmallThings.Interfaces;
 using SmallThings.Models;
 using SmallThings.Services;
@@ -13,12 +8,12 @@ namespace SmallThings
 {
 	class Program
 	{
-		
+		private static IProductProcessor _productProcessor = new ProductProcessor();
 
 		static void Main(string[] args)
 		{
 			var productApiService = new ProductApiService();
-			var products = new ObservableCollection<Product>();
+			var products = new ObservableCollection<ProductBase>();
 
 			products.CollectionChanged += OnProductsCollectionChanged;
 
@@ -33,8 +28,12 @@ namespace SmallThings
 
 		private static void OnProductsCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
 		{
-			args.
-			throw new NotImplementedException();
+			foreach (var newItem in args.NewItems)
+			{
+				var item = newItem as ProductBase;
+
+				item?.ApplyProductProcessor(_productProcessor);
+			}
 		}
 
 	}

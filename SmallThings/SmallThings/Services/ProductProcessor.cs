@@ -14,6 +14,16 @@ namespace SmallThings.Services
 			ProcessImages(product.Images);
 		}
 
+		public void ProcessProduct(Product2 product)
+		{
+			//Product2 processing logic
+		}
+
+		public void ProcessProduct(Product3 product)
+		{
+			//Product3 processing logic
+		}
+
 		private void ProcessImages(List<Image> images)
 		{
 			if (!images.Any())
